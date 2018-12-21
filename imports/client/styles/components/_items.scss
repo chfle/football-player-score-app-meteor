@@ -3,6 +3,10 @@
   border: 1px solid #E8E8E8;
   margin-bottom: 1.3rem;
   padding: 1.3rem;
+
+  &:hover {
+    background: lighten(#f9f9fd, 4%);
+  }
 }
 
 .item__message {
@@ -12,3 +16,29 @@
   text-align: center;
 }
 
+.item--1 {
+  background: lighten($moonRaker, 15%);
+  border: 1px solid $moonRaker;
+
+  &:hover {
+    background: lighten($moonRaker, 9%);
+  }
+}
+
+.item--2 {
+  background: lighten($dustStorm, 15%);
+  border: 1px solid $dustStorm;
+
+  &:hover {
+    background: lighten($dustStorm, 9%);
+  }
+}
+
+.item--3 {
+  background: lighten($lightOldLace, 15%);
+  border: 1px solid $lightOldLace;
+
+  &:hover {
+    background: lighten($lightOldLace, 9%);
+  }
+}

@@ -6,13 +6,16 @@ import { Players } from '../api/players';
 
 class Player extends Component {
   render() {
-    const { name, score, _id, rank, position } = this.props;
+    const {
+      name, score, _id, rank, position,
+    } = this.props;
+    const itemClass = `item item--${rank}`;
     return (
-      <div className="item">
+      <div className={itemClass}>
         <div className="player">
           <div>
             <h3 className="player__name">{name}</h3>
-            <p className="player__stats">{`${rank}  ${position} ${score} point(s)`}</p>
+            <p className="player__stats">{`${position} ${score} point(s)`}</p>
           </div>
           <div className="player__actions">
             <button className="button button--round" onClick={() => { Players.update(_id, { $inc: { score: +1 } }); }}>
@@ -36,7 +39,7 @@ Player.propTypes = {
   score: PropTypes.number.isRequired,
   _id: PropTypes.string.isRequired,
   rank: PropTypes.number.isRequired,
-  position: PropTypes.string.isRequired
+  position: PropTypes.string.isRequired,
 };
 
 export default Player;
